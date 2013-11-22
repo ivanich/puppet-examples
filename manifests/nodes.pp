@@ -17,6 +17,7 @@ nginx::vhost { 'testhost':
         port => 80,
         server_names => ['localhost'],
         group_name => 'tomcat_servers',
+	app_name => 'webapp-1.0-SNAPSHOT',
  }
 nginx::lb { 'tomcat_servers':
         group_name => 'tomcat_servers',

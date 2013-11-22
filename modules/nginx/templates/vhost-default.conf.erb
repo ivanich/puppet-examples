@@ -5,7 +5,7 @@ server {
     error_log /var/log/nginx/<%= vhost_name %>-error.log warn;
     root <%= docroot %>;
     location / {
-        proxy_pass http://<%= group_name %>;
+        proxy_pass http://<%= group_name %>/<%= app_name %>/;
         }
 
 }

@@ -1,4 +1,4 @@
-define nginx::vhost( $ensure = present, $docroot, $vhost_name = $title, $port = 80, $template = 'nginx/vhost-default.conf.erb', $group_name, $server_names = ['_'] ) {
+define nginx::vhost( $ensure = present, $docroot, $vhost_name = $title, $port = 80, $template = 'nginx/vhost-default.conf.erb', $group_name, $server_names = ['_'], $app_name='' ) {
   include nginx
 
   $available_dir = '/etc/nginx/sites-available'
