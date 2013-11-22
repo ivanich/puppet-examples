@@ -1,0 +1,14 @@
+server {
+    listen <%= port %>;
+    server_name <% server_names.each do |server_name| %><%= server_name %> <% end %>;
+    access_log /var/log/nginx/<%= vhost_name %>-access.log;
+    error_log /var/log/nginx/<%= vhost_name %>-error.log warn;
+    root <%= docroot %>;
+    location / {
+        proxy_pass http://<%= group_name %>;
+        }
+
+}
+
+
+
